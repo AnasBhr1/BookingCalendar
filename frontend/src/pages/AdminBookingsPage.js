@@ -98,11 +98,11 @@ const AdminBookingsPage = () => {
   const getStatusBadge = (status) => {
     switch (status) {
       case 'confirmed':
-        return <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Confirmed</span>;
+        return <span className="px-2 py-1 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 text-xs rounded-full">Confirmed</span>;
       case 'canceled':
-        return <span className="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">Canceled</span>;
+        return <span className="px-2 py-1 bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 text-xs rounded-full">Canceled</span>;
       default:
-        return <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Pending</span>;
+        return <span className="px-2 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 text-xs rounded-full">Pending</span>;
     }
   };
 
@@ -125,7 +125,7 @@ const AdminBookingsPage = () => {
       {alertMessage && (
         <div 
           className={`mb-4 p-3 rounded ${
-            alertType === 'error' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
+            alertType === 'error' ? 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400' : 'bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400'
           }`}
         >
           {alertMessage}
@@ -133,7 +133,7 @@ const AdminBookingsPage = () => {
       )}
       
       {error && (
-        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
+        <div className="mb-4 p-3 bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400 rounded">
           {error}
         </div>
       )}
@@ -142,7 +142,7 @@ const AdminBookingsPage = () => {
         <button 
           onClick={() => setFilter('all')}
           className={`px-4 py-2 rounded ${
-            filter === 'all' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800'
+            filter === 'all' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
           }`}
         >
           All
@@ -150,7 +150,7 @@ const AdminBookingsPage = () => {
         <button 
           onClick={() => setFilter('pending')}
           className={`px-4 py-2 rounded ${
-            filter === 'pending' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800'
+            filter === 'pending' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
           }`}
         >
           Pending
@@ -158,7 +158,7 @@ const AdminBookingsPage = () => {
         <button 
           onClick={() => setFilter('confirmed')}
           className={`px-4 py-2 rounded ${
-            filter === 'confirmed' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800'
+            filter === 'confirmed' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
           }`}
         >
           Confirmed
@@ -166,7 +166,7 @@ const AdminBookingsPage = () => {
         <button 
           onClick={() => setFilter('canceled')}
           className={`px-4 py-2 rounded ${
-            filter === 'canceled' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800'
+            filter === 'canceled' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
           }`}
         >
           Canceled
@@ -174,58 +174,70 @@ const AdminBookingsPage = () => {
       </div>
       
       {filteredBookings.length === 0 ? (
-        <div className="bg-white p-6 rounded-lg shadow text-center">
-          <p className="text-gray-600">No bookings found.</p>
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center">
+          <p className="text-gray-600 dark:text-gray-400">No bookings found.</p>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead className="bg-gray-50 dark:bg-gray-700">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   User
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Title
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Start Time
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                  Date
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  End Time
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                  Time
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
               {filteredBookings.map(booking => (
-                <tr key={booking._id}>
+                <tr 
+                  key={booking._id}
+                  className={`
+                    hover:bg-gray-50 dark:hover:bg-gray-700
+                    ${booking.status === 'confirmed' ? 'bg-green-50 dark:bg-green-900/20' : 
+                      booking.status === 'canceled' ? 'bg-red-50 dark:bg-red-900/20' : ''}
+                  `}
+                >
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">
+                    <div className="text-sm text-gray-900 dark:text-gray-100">
                       {booking.user.name}
                     </div>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
                       {booking.user.email}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm font-medium text-gray-900">
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
                       {booking.title}
                     </div>
+                    {booking.notes && (
+                      <div className="text-xs text-gray-500 dark:text-gray-400 max-w-xs truncate">
+                        {booking.notes}
+                      </div>
+                    )}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-500">
-                      {moment(booking.start).format('MMM D, YYYY h:mm A')}
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                      {moment(booking.start).format('MMM D, YYYY')}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-500">
-                      {moment(booking.end).format('MMM D, YYYY h:mm A')}
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                      {moment(booking.start).format('h:mm A')} - {moment(booking.end).format('h:mm A')}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -235,13 +247,13 @@ const AdminBookingsPage = () => {
                     <div className="flex space-x-2">
                       <button
                         onClick={() => handleEditBooking(booking)}
-                        className="text-indigo-600 hover:text-indigo-900"
+                        className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => handleDeleteBooking(booking._id)}
-                        className="text-red-600 hover:text-red-900"
+                        className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300"
                       >
                         Delete
                       </button>
@@ -249,7 +261,7 @@ const AdminBookingsPage = () => {
                         <select
                           value={booking.status}
                           onChange={(e) => handleStatusChange(booking._id, e.target.value)}
-                          className="text-sm border rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          className="text-sm border rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         >
                           <option value="pending">Pending</option>
                           <option value="confirmed">Confirm</option>

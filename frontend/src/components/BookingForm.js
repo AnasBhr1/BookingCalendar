@@ -92,13 +92,13 @@ const BookingForm = ({
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-xl">
-      <h2 className="text-xl font-semibold mb-4">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl">
+      <h2 className="text-xl font-semibold mb-4 dark:text-white">
         {existingBooking ? 'Edit Booking' : 'New Booking'}
       </h2>
       
       {selectedSlot && !existingBooking && (
-        <div className="mb-4 text-gray-600">
+        <div className="mb-4 text-gray-600 dark:text-gray-300">
           <p>
             <span className="font-medium">Start:</span> {moment(selectedSlot.start).format('MMM D, YYYY h:mm A')}
           </p>
@@ -109,7 +109,7 @@ const BookingForm = ({
       )}
       
       {existingBooking && (
-        <div className="mb-4 text-gray-600">
+        <div className="mb-4 text-gray-600 dark:text-gray-300">
           <p>
             <span className="font-medium">Start:</span> {moment(existingBooking.start).format('MMM D, YYYY h:mm A')}
           </p>
@@ -120,14 +120,14 @@ const BookingForm = ({
       )}
       
       {error && (
-        <div className="mb-4 p-2 bg-red-100 text-red-700 rounded">
+        <div className="mb-4 p-2 bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 rounded">
           {error}
         </div>
       )}
       
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-gray-700 mb-1" htmlFor="title">
+          <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="title">
             Title
           </label>
           <input
@@ -135,21 +135,21 @@ const BookingForm = ({
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             placeholder="Booking title"
             required
           />
         </div>
         
         <div className="mb-4">
-          <label className="block text-gray-700 mb-1" htmlFor="notes">
+          <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="notes">
             Notes (optional)
           </label>
           <textarea
             id="notes"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             placeholder="Add any notes here"
             rows="3"
           />
@@ -157,14 +157,14 @@ const BookingForm = ({
         
         {existingBooking && (
           <div className="mb-4">
-            <label className="block text-gray-700 mb-1" htmlFor="status">
+            <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="status">
               Status
             </label>
             <select
               id="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             >
               <option value="pending">Pending</option>
               <option value="confirmed">Confirmed</option>
@@ -175,7 +175,7 @@ const BookingForm = ({
         
         {googleConnected && (
           <div className="mb-4">
-            <label className="flex items-center text-gray-700">
+            <label className="flex items-center text-gray-700 dark:text-gray-300">
               <input
                 type="checkbox"
                 checked={syncToGoogle}
@@ -191,7 +191,7 @@ const BookingForm = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-100"
+            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             Cancel
           </button>

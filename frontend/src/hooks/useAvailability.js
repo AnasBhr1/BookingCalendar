@@ -18,8 +18,12 @@ export const useAvailability = () => {
           title: 'Available',
           start: new Date(slot.start),
           end: new Date(slot.end),
-          color: '#8BC34A', // Light green
-          rendering: 'background'
+          color: 'rgba(139, 195, 74, 0.3)', // More transparent light green
+          textColor: '#4a5568', // Darker text for better readability
+          rendering: 'background',
+          display: 'background',
+          backgroundColor: 'rgba(139, 195, 74, 0.3)', 
+          borderColor: 'rgba(139, 195, 74, 0.5)'
         }));
         
         setAvailabilitySlots(formattedSlots);

@@ -55,32 +55,35 @@ const GoogleCalendarSettings = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center p-4">
-        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-500"></div>
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold mb-4 dark:text-white">Google Calendar Integration</h2>
+        <div className="flex justify-center items-center p-4">
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-500"></div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4">Google Calendar Integration</h2>
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <h2 className="text-xl font-semibold mb-4 dark:text-white">Google Calendar Integration</h2>
       
       {error && (
-        <div className="mb-4 p-2 bg-red-100 text-red-700 rounded">
+        <div className="mb-4 p-2 bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 rounded">
           {error}
         </div>
       )}
       
       {connected ? (
         <div>
-          <div className="mb-4 p-3 bg-green-100 text-green-700 rounded flex items-center">
+          <div className="mb-4 p-3 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded flex items-center">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span>Connected to Google Calendar ({email})</span>
           </div>
           
-          <p className="mb-4 text-gray-600">
+          <p className="mb-4 text-gray-600 dark:text-gray-300">
             Your bookings will automatically sync with your Google Calendar.
           </p>
           
@@ -94,7 +97,7 @@ const GoogleCalendarSettings = () => {
         </div>
       ) : (
         <div>
-          <p className="mb-4 text-gray-600">
+          <p className="mb-4 text-gray-600 dark:text-gray-300">
             Connect your Google Calendar to automatically sync your bookings.
           </p>
           

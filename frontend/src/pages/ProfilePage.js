@@ -33,24 +33,24 @@ const ProfilePage = () => {
       <h1 className="text-2xl font-bold mb-6">Your Profile</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">Profile Information</h2>
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-semibold mb-4 dark:text-white">Profile Information</h2>
           
           {error && (
-            <div className="mb-4 p-2 bg-red-100 text-red-700 rounded">
+            <div className="mb-4 p-2 bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 rounded">
               {error}
             </div>
           )}
           
           {success && (
-            <div className="mb-4 p-2 bg-green-100 text-green-700 rounded">
+            <div className="mb-4 p-2 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded">
               {success}
             </div>
           )}
           
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-1" htmlFor="name">
+              <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="name">
                 Name
               </label>
               <input
@@ -58,13 +58,13 @@ const ProfilePage = () => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 placeholder="Your name"
               />
             </div>
             
             <div className="mb-4">
-              <label className="block text-gray-700 mb-1" htmlFor="email">
+              <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="email">
                 Email
               </label>
               <input
@@ -72,11 +72,11 @@ const ProfilePage = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white bg-gray-100 dark:bg-gray-800"
                 placeholder="Your email"
                 disabled
               />
-              <p className="text-xs text-gray-500 mt-1">Email cannot be changed</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Email cannot be changed</p>
             </div>
             
             <button

@@ -144,7 +144,7 @@ const AdminDashboardPage = () => {
       <h1 className="text-2xl font-bold mb-6">Admin Dashboard</h1>
       
       {error && (
-        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
+        <div className="mb-4 p-3 bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400 rounded">
           {error}
         </div>
       )}

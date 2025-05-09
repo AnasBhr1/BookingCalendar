@@ -38,14 +38,6 @@ function App() {
                       </PrivateRoute>
                     } 
                   />
-                  <Route 
-                    path="/admin/dashboard" 
-                    element={
-                      <PrivateRoute adminOnly={true}>
-                        <AdminDashboardPage />
-                      </PrivateRoute>
-                    } 
-                  />
                   
                   <Route 
                     path="/bookings" 
@@ -61,6 +53,15 @@ function App() {
                     element={
                       <PrivateRoute>
                         <ProfilePage />
+                      </PrivateRoute>
+                    } 
+                  />
+                  
+                  <Route 
+                    path="/admin/dashboard" 
+                    element={
+                      <PrivateRoute adminOnly={true}>
+                        <AdminDashboardPage />
                       </PrivateRoute>
                     } 
                   />
