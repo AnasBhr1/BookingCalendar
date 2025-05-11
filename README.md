@@ -1,55 +1,42 @@
 Booking Calendar
-📅 Modern Full-Stack Booking Application
-A comprehensive MERN-stack booking calendar application with real-time updates, Google Calendar integration, and advanced admin features. Designed for managing appointments across multiple users with role-based access control.
+A comprehensive MERN-stack appointment scheduling application with real-time updates, Google Calendar integration, and role-based access control.
 
+Show Image
+
+🚀 Overview
+This Booking Calendar application provides a modern solution for scheduling and managing appointments. Built with the MERN stack (MongoDB, Express.js, React, Node.js), it features a responsive UI, role-based access control, and real-time updates for a seamless booking experience.
 
 ✨ Features
-Core Functionality
-User Authentication: Secure JWT-based authentication system
-Role-Based Access Control: Different permissions for Admins and Users
-Interactive Calendar Interface: Week and month views using React calendar components
-Booking Management: Create, reschedule, and cancel appointments
-Real-Time Feedback: Instant notification of booking conflicts
-User Features
-View available time slots
-Book new appointments
-Reschedule existing appointments
-Cancel bookings with notifications
-Personal dashboard of upcoming appointments
+Core Features
+Feature	Description
+User Authentication	JWT-based authentication with secure login and registration
+Role-Based Access	Different permissions for Admin and User roles
+Interactive Calendar	Week/month views using React calendar components
+Real-Time Updates	Socket.IO implementation for instant booking notifications
+Google Calendar Sync	OAuth 2.0 integration with Google Calendar
+User Capabilities
+Browse and view available appointment slots
+Book, reschedule, and cancel appointments
+Receive real-time feedback on booking conflicts
+Access personalized dashboard of upcoming appointments
+Sync bookings with Google Calendar
 Admin Features
-User and role management
+Comprehensive user and role management
 Create recurring or one-time availability slots
-Comprehensive booking overview with filtering options
-Analytics dashboard with booking metrics
-Advanced Features
-Real-Time Updates: WebSocket implementation using Socket.IO for instant availability updates
-Google Calendar Integration: Sync appointments with Google Calendar (OAuth 2.0)
-Smart Time Slot Suggestions: Intelligent booking time recommendations
-Responsive Design: Mobile-first approach with clean UI
-Dark Mode: Toggle with preferences saved in localStorage
-Admin Analytics: Visual data representation using charts
-Notifications: Email confirmation via Nodemailer
-Drag-and-Drop: Interactive rescheduling of appointments
+View, filter, and manage all system bookings
+Access analytics dashboard with booking metrics
+Generate reports on usage patterns
+Advanced Functionality
+Smart Time Suggestions: AI-style logic for optimal booking times
+Responsive Design: Mobile-first approach using Tailwind CSS
+Dark/Light Mode: Theme toggle with localStorage persistence
+Data Visualization: Charts and graphs for booking analytics
+Notifications: Email confirmations via Nodemailer
+Drag-and-Drop: Interactive appointment rescheduling
 🛠️ Technology Stack
-Frontend
-React: UI component library
-React Router: Client-side routing
-Context API: State management
-React-Big-Calendar/FullCalendar: Calendar interface
-Tailwind CSS: Styling and responsiveness
-Chart.js/Recharts: Data visualization
-Socket.IO Client: Real-time communication
-Backend
-Node.js: Runtime environment
-Express.js: Web application framework
-MongoDB: Database
-Mongoose: ODM for MongoDB
-JWT: Authentication
-Socket.IO: WebSocket implementation
-Nodemailer: Email notifications
-Google Calendar API: Calendar integration
+<table> <tr> <th>Frontend</th> <th>Backend</th> </tr> <tr> <td> <ul> <li>React</li> <li>React Router</li> <li>Context API</li> <li>React-Big-Calendar/FullCalendar</li> <li>Tailwind CSS</li> <li>Recharts for data visualization</li> <li>Socket.IO Client</li> </ul> </td> <td> <ul> <li>Node.js</li> <li>Express.js</li> <li>MongoDB & Mongoose</li> <li>JWT Authentication</li> <li>Socket.IO</li> <li>Nodemailer</li> <li>Google Calendar API</li> </ul> </td> </tr> </table>
 📂 Project Structure
-Backend
+<details> <summary><strong>Backend Structure</strong></summary>
 backend/
 ├── config/
 │   └── googleOAuth.js
@@ -75,7 +62,7 @@ backend/
 ├── .env
 ├── package.json
 └── server.js
-Frontend
+</details> <details> <summary><strong>Frontend Structure</strong></summary>
 frontend/
 ├── src/
 │   ├── components/
@@ -87,7 +74,6 @@ frontend/
 │   │   ├── BookingForm.js
 │   │   ├── DarkModeToggle.js
 │   │   ├── GoogleCalendarSettings.js
-│   │   ├── Modal.js
 │   │   └── ...
 │   ├── context/
 │   │   ├── AuthContext.js
@@ -105,28 +91,39 @@ frontend/
 │   │   ├── AdminUsersPage.js
 │   │   ├── CalendarPage.js
 │   │   ├── HomePage.js
-│   │   ├── LoginPage.js
-│   │   ├── ProfilePage.js
-│   │   ├── RegisterPage.js
-│   │   └── UserBookingsPage.js
+│   │   └── ...
 │   ├── services/
 │   │   ├── availability.service.js
 │   │   ├── booking.service.js
-│   │   ├── googleCalendarService.js
-│   │   └── userService.js
-│   ├── utils/
-│   ├── App.css
+│   │   └── ...
 │   ├── App.js
 │   └── index.js
-├── package.json
-└── tailwind.config.js
+└── package.json
+</details>
 🚀 Installation & Setup
 Prerequisites
-Node.js (v14 or higher)
+Node.js (v14+)
 MongoDB
 npm or yarn
-Environment Variables
-Create a .env file in the backend directory with the following variables:
+Quick Start
+bash
+# Clone the repository
+git clone https://github.com/yourusername/booking-calendar.git
+cd booking-calendar
+
+# Install backend dependencies
+cd backend
+npm install
+
+# Install frontend dependencies
+cd ../frontend
+npm install
+
+# Run both frontend and backend (from root directory)
+cd ..
+npm run dev
+Environment Setup
+Create a .env file in the backend directory:
 
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
@@ -137,71 +134,63 @@ GOOGLE_REDIRECT_URI=http://localhost:5000/api/google/callback
 EMAIL_SERVICE=your_email_service
 EMAIL_USER=your_email_address
 EMAIL_PASS=your_email_password
-Backend Setup
-bash
-# Navigate to backend directory
-cd backend
+📸 Screenshots
+<details> <summary>View Application Screenshots</summary>
+Calendar View
+Show Image
 
-# Install dependencies
-npm install
+Admin Dashboard
+Show Image
 
-# Start development server
-npm run dev
-Frontend Setup
-bash
-# Navigate to frontend directory
-cd frontend
+Booking Process
+Show Image
 
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-💡 Usage
-User Registration & Login
-Navigate to the registration page
-Create an account with email and password
-Log in with credentials
-Booking an Appointment (User)
+</details>
+💡 Usage Examples
+<details> <summary><strong>For Users</strong></summary>
+Booking an Appointment
+Log in to your account
 Navigate to the Calendar page
-Select an available time slot
-Fill in appointment details
-Confirm booking
-Managing Availability (Admin)
-Log in as an admin
-Navigate to Admin Dashboard > Availability
-Create new availability slots or modify existing ones
-Set recurring availability patterns if needed
-Google Calendar Integration
-Navigate to Profile page
-Click on "Connect Google Calendar"
-Complete the OAuth authentication process
-Select which calendars to sync
-🧪 Testing
+Available slots appear in green, booked slots in gray
+Click on an available time slot
+Fill in the appointment details form
+Submit to confirm your booking
+Receive email confirmation automatically
+Managing Your Bookings
+Go to "My Bookings" from the navigation menu
+View all your upcoming appointments
+Click "Reschedule" or "Cancel" on any appointment
+Follow the prompts to complete your action
+</details> <details> <summary><strong>For Admins</strong></summary>
+Setting Availability
+Log in with admin credentials
+Go to Admin Dashboard > Availability
+Create new availability slots (single or recurring)
+Set time ranges, days of week, and date limits
+Save to update the system
+Viewing Analytics
+Access the Admin Dashboard
+View booking statistics, popular time slots, and usage patterns
+Use filters to analyze specific date ranges or user groups
+</details>
+👨‍💻 Development
 bash
-# Run backend tests
-cd backend
+# Run in development mode
+npm run dev
+
+# Run tests
 npm test
 
-# Run frontend tests
-cd frontend
-npm test
+# Build for production
+npm run build
 🤝 Contributing
-Fork the repository
-Create a feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add some amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
-📝 License
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-# Run backend & front end 
-cd booking-calendar-app
-npm start
-
 📬 Contact
-Via Github : https://github.com/AnasBhr1/
-email : Anasbhr1@hotmail.com
-
+GitHub: https://github.com/AnasBhr1/
+Email: Anasbhr1@hotmail.com
 ⭐️ From Anas
 
