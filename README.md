@@ -1,84 +1,76 @@
-# Booking Calendar
 
-A comprehensive MERN-stack appointment scheduling application with real-time updates, Google Calendar integration, and role-based access control.
+# 📅 Booking Calendar
+
+A comprehensive **MERN-stack appointment scheduling application** with real-time updates, Google Calendar integration, and role-based access control.
 
 ![Booking Calendar Screenshot](https://via.placeholder.com/800x400?text=Booking+Calendar+Screenshot)
 
+---
+
 ## 🚀 Overview
 
-This Booking Calendar application provides a modern solution for scheduling and managing appointments. Built with the MERN stack (MongoDB, Express.js, React, Node.js), it features a responsive UI, role-based access control, and real-time updates for a seamless booking experience.
+This Booking Calendar application provides a modern solution for scheduling and managing appointments. Built with the **MERN stack** (MongoDB, Express.js, React, Node.js), it features a responsive UI, role-based access control, and real-time updates for a seamless booking experience.
+
+---
 
 ## ✨ Features
 
-### Core Features
+### ✅ Core Features
 
 | Feature | Description |
-|---------|-------------|
+|--------|-------------|
 | **User Authentication** | JWT-based authentication with secure login and registration |
-| **Role-Based Access** | Different permissions for Admin and User roles |
+| **Role-Based Access** | Permissions based on roles: Admin and User |
 | **Interactive Calendar** | Week/month views using React calendar components |
-| **Real-Time Updates** | Socket.IO implementation for instant booking notifications |
+| **Real-Time Updates** | Socket.IO for instant booking notifications |
 | **Google Calendar Sync** | OAuth 2.0 integration with Google Calendar |
 
-### User Capabilities
-- Browse and view available appointment slots
+### 👤 User Capabilities
+
+- Browse available appointment slots
 - Book, reschedule, and cancel appointments
-- Receive real-time feedback on booking conflicts
-- Access personalized dashboard of upcoming appointments
+- Receive real-time conflict feedback
+- Access dashboard with upcoming appointments
 - Sync bookings with Google Calendar
 
-### Admin Features
-- Comprehensive user and role management
+### 🛡️ Admin Features
+
+- Manage users and roles
 - Create recurring or one-time availability slots
-- View, filter, and manage all system bookings
-- Access analytics dashboard with booking metrics
+- View and manage all bookings
+- Access analytics dashboard with metrics
 - Generate reports on usage patterns
 
-### Advanced Functionality
-- **Smart Time Suggestions**: AI-style logic for optimal booking times
-- **Responsive Design**: Mobile-first approach using Tailwind CSS
-- **Dark/Light Mode**: Theme toggle with localStorage persistence
-- **Data Visualization**: Charts and graphs for booking analytics
-- **Notifications**: Email confirmations via Nodemailer
-- **Drag-and-Drop**: Interactive appointment rescheduling
+### ⚙️ Advanced Functionality
+
+- **Smart Time Suggestions** using AI-style logic
+- **Responsive Design** (Mobile-first with Tailwind CSS)
+- **Dark/Light Mode** with localStorage persistence
+- **Data Visualization** via charts and graphs
+- **Email Notifications** using Nodemailer
+- **Drag-and-Drop Rescheduling** for appointments
+
+---
 
 ## 🛠️ Technology Stack
 
-<table>
-  <tr>
-    <th>Frontend</th>
-    <th>Backend</th>
-  </tr>
-  <tr>
-    <td>
-      <ul>
-        <li>React</li>
-        <li>React Router</li>
-        <li>Context API</li>
-        <li>React-Big-Calendar/FullCalendar</li>
-        <li>Tailwind CSS</li>
-        <li>Recharts for data visualization</li>
-        <li>Socket.IO Client</li>
-      </ul>
-    </td>
-    <td>
-      <ul>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>MongoDB & Mongoose</li>
-        <li>JWT Authentication</li>
-        <li>Socket.IO</li>
-        <li>Nodemailer</li>
-        <li>Google Calendar API</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| Frontend | Backend |
+|----------|---------|
+| React, React Router, Context API | Node.js, Express.js |
+| React-Big-Calendar / FullCalendar | MongoDB & Mongoose |
+| Tailwind CSS | JWT Authentication |
+| Recharts (Analytics) | Socket.IO |
+| Socket.IO Client | Nodemailer |
+|  | Google Calendar API |
+
+---
 
 ## 📂 Project Structure
 
 <details>
-<summary><strong>Backend Structure</strong></summary>
+<summary><strong>🔙 Backend</strong></summary>
+
+```
 backend/
 ├── config/
 │   └── googleOAuth.js
@@ -104,22 +96,24 @@ backend/
 ├── .env
 ├── package.json
 └── server.js
+```
+
 </details>
 
 <details>
-<summary><strong>Frontend Structure</strong></summary>
+<summary><strong>🖥️ Frontend</strong></summary>
+
+```
 frontend/
 ├── src/
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── DashboardLayout.js
 │   │   │   ├── Navigation.js
-│   │   │   └── ...
 │   │   ├── BookingCard.js
 │   │   ├── BookingForm.js
 │   │   ├── DarkModeToggle.js
 │   │   ├── GoogleCalendarSettings.js
-│   │   └── ...
 │   ├── context/
 │   │   ├── AuthContext.js
 │   │   ├── DarkModeContext.js
@@ -136,17 +130,19 @@ frontend/
 │   │   ├── AdminUsersPage.js
 │   │   ├── CalendarPage.js
 │   │   ├── HomePage.js
-│   │   └── ...
 │   ├── services/
 │   │   ├── availability.service.js
 │   │   ├── booking.service.js
-│   │   └── ...
 │   ├── App.js
 │   └── index.js
-└── package.json
+├── package.json
+```
+
 </details>
 
-## 🚀 Installation & Setup
+---
+
+## ⚙️ Installation & Setup
 
 ### Prerequisites
 
@@ -172,8 +168,13 @@ npm install
 # Run both frontend and backend (from root directory)
 cd ..
 npm run dev
-Environment Setup
-Create a .env file in the backend directory:
+```
+
+### Environment Setup
+
+Create a `.env` file in the `backend/` directory with the following:
+
+```
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
@@ -183,56 +184,77 @@ GOOGLE_REDIRECT_URI=http://localhost:5000/api/google/callback
 EMAIL_SERVICE=your_email_service
 EMAIL_USER=your_email_address
 EMAIL_PASS=your_email_password
-📸 Screenshots
+```
+
+---
+
+## 📸 Screenshots
+
 <details>
 <summary>View Application Screenshots</summary>
-Calendar View
-Show Image
-Admin Dashboard
-Show Image
-Booking Process
-Show Image
+
+**Calendar View**  
+![Calendar View](https://via.placeholder.com/800x400?text=Calendar+View)
+
+**Admin Dashboard**  
+![Admin Dashboard](https://via.placeholder.com/800x400?text=Admin+Dashboard)
+
+**Booking Process**  
+![Booking Process](https://via.placeholder.com/800x400?text=Booking+Process)
+
 </details>
-💡 Usage Examples
+
+---
+
+## 💡 Usage Examples
+
 <details>
-<summary><strong>For Users</strong></summary>
-Booking an Appointment
+<summary><strong>👥 For Users</strong></summary>
 
-Log in to your account
-Navigate to the Calendar page
-Available slots appear in green, booked slots in gray
-Click on an available time slot
-Fill in the appointment details form
-Submit to confirm your booking
-Receive email confirmation automatically
+### Booking an Appointment
 
-Managing Your Bookings
+1. Log in to your account  
+2. Navigate to the Calendar page  
+3. Available slots appear in green, booked slots in gray  
+4. Click on a time slot  
+5. Fill in the appointment details  
+6. Submit to confirm your booking  
+7. Receive confirmation via email
 
-Go to "My Bookings" from the navigation menu
-View all your upcoming appointments
-Click "Reschedule" or "Cancel" on any appointment
-Follow the prompts to complete your action
+### Managing Your Bookings
+
+- Go to **"My Bookings"**
+- View upcoming appointments
+- Click **Reschedule** or **Cancel**
+- Follow prompts to complete the action
 
 </details>
+
 <details>
-<summary><strong>For Admins</strong></summary>
-Setting Availability
+<summary><strong>🛠️ For Admins</strong></summary>
 
-Log in with admin credentials
-Go to Admin Dashboard > Availability
-Create new availability slots (single or recurring)
-Set time ranges, days of week, and date limits
-Save to update the system
+### Setting Availability
 
-Viewing Analytics
+- Log in as admin
+- Go to **Dashboard > Availability**
+- Create new slots (recurring or one-time)
+- Set time ranges and day constraints
+- Save to update availability
 
-Access the Admin Dashboard
-View booking statistics, popular time slots, and usage patterns
-Use filters to analyze specific date ranges or user groups
+### Viewing Analytics
+
+- Visit **Admin Dashboard**
+- Analyze booking stats, peak times, and trends
+- Filter by date or user group
 
 </details>
-👨‍💻 Development
-bash# Run in development mode
+
+---
+
+## 👨‍💻 Development
+
+```bash
+# Run in development mode
 npm run dev
 
 # Run tests
@@ -240,14 +262,29 @@ npm test
 
 # Build for production
 npm run build
-🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-📬 Contact
+```
 
-GitHub: https://github.com/AnasBhr1/
-Email: Anasbhr1@hotmail.com
+---
 
+## 🤝 Contributing
 
-⭐️ From Anas
+Contributions are welcome!  
+Feel free to fork the repo and submit a pull request. 🎉
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for more information.
+
+---
+
+## 📬 Contact
+
+- GitHub: [AnasBhr1](https://github.com/AnasBhr1)
+- Email: [anasbhr1@hotmail.com](mailto:anasbhr1@hotmail.com)
+
+---
+
+⭐️ Made with passion by **Anas**
